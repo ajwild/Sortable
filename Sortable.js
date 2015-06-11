@@ -56,7 +56,8 @@
 		document = win.document,
 		parseInt = win.parseInt,
 
-		supportDraggable = !!('draggable' in document.createElement('div')),
+		div = document.createElement('div'),
+		supportDraggable = !!(('draggable' in div) || ('ondragstart' in div && 'ondrop' in div)),
 
 		_silent = false,
 

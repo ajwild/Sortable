@@ -650,6 +650,10 @@
 			var ownerDocument = this.el.ownerDocument;
 
 			_off(document, 'touchmove', this._onTouchMove);
+			_off(document, 'touchend', this._onDrop);
+			_off(document, 'touchcancel', this._onDrop);
+			_off(document, 'mousemove', this._onTouchMove);
+			_off(document, 'mouseup', this._onDrop);
 			_off(ownerDocument, 'mouseup', this._onDrop);
 			_off(ownerDocument, 'touchend', this._onDrop);
 			_off(ownerDocument, 'touchcancel', this._onDrop);
@@ -666,7 +670,6 @@
 
 			// Unbind events
 			_off(document, 'drop', this);
-			_off(document, 'mousemove', this._onTouchMove);
 			_off(el, 'dragstart', this._onDragStart);
 
 			this._offUpEvents();

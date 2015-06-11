@@ -1139,7 +1139,7 @@
 	};
 
 
-	Sortable.version = '1.2.1';
+	Sortable.version = '1.2.2';
 
 
 	/**
